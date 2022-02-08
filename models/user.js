@@ -2,8 +2,15 @@
 const { Model, DataTypes } = require('sequelize');
 //import connection file
 const sequelize = require('../config/connection');
+//import bcrypt
+const bcrypt = require('bcrypt');
 
-class User extends Model{}
+class User extends Model{
+    //to use bcrypt compare method to check password
+    checkUserPassword(userPassword){
+        return bcrypt.compare(userPassword, this.password);
+    }
+}
 
 //define columns
 User.init(
