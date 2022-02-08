@@ -6,3 +6,8 @@ const Comment = require('./comment');
 Post.belongsTo(User, {
     foreignKey: 'user_id'
 })
+
+//post has many comment
+Post.hasMany(Comment, {
+    foreignKey: 'post_id'
+})
