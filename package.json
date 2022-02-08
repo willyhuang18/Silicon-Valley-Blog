@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/willyhuang18/Tech-Blog/issues"
   },
-  "homepage": "https://github.com/willyhuang18/Tech-Blog#readme"
+  "homepage": "https://github.com/willyhuang18/Tech-Blog#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3"
+  }
 }
