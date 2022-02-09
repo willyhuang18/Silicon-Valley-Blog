@@ -59,7 +59,7 @@ router.get('/:id', (req, res)=>{
     })
     .then(response =>{
             if(!response){
-                res.status(404).json({ message: 'Please enter valid id'});
+                res.status(404).json({ message: 'Please enter valid  id for this post'});
                 return;
             }
          res.json(response)
@@ -97,7 +97,7 @@ router.put('/:id', withAuth, (req, res) => {
     })
     .then(response =>{
             if(!response){
-                res.status(404).json({ message: 'Please enter valid  id'});
+                res.status(404).json({ message: 'Please enter valid  id for this post'});
                 return;
             }
          res.json(response)
@@ -105,5 +105,14 @@ router.put('/:id', withAuth, (req, res) => {
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
+    })
+});
+
+//using delete route to destroy post
+router.delete('/:id', withAuth, (req, res) => {
+    Post.destroy({
+        where: {
+            id: req.params.id 
+        }
     })
 });
