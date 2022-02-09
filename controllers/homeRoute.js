@@ -36,3 +36,12 @@ router.get('/', (req, res)=>{
         res.status(500).json(err);
       });
 })
+
+//redirect to homepage after logged in
+router.get('/login', (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/');
+        return; 
+    }
+    res.render('login');
+})
