@@ -14,3 +14,14 @@ router.get('/' ,(req, res) => {
         res.status(500).json(err); 
     })
 })
+
+//route for posting new comment
+router.post('/', withAuth, (req, res) => {
+    Comment.create({ 
+        //data from model
+        comment_text: req.body.comment_text, 
+        post_id: req.body.post_id,
+        user_id: req.session.user_id
+    })
+
+});
