@@ -83,3 +83,16 @@ router.post('/', withAuth, (req, res) => {
         res.status(500).json(err);
     })
 });
+
+//Update post by using put route
+router.put('/:id', withAuth, (req, res) => {
+    Post.update({
+        title: req.body.title,
+        text: req.body.post_text
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+    })
+});
