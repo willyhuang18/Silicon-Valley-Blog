@@ -11,20 +11,24 @@
 
 <body>
     <div class="wrapper">
-    <header>
-      <h1>
-        <p class="blog-title">The Silicon Valley Blog<i class="fa-solid fa-blog"></i></p>
-      </h1>
-    
-    <nav>
-    <a href="/">Homepage</a>
-    <a href="/login">Login</a>
-    </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-  </div>
+        <header>
+            <h1>
+                <p class="blog-title">The Silicon Valley Blog<i class="fa-solid fa-blog"></i></p>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <a href="/" class="homepage">Homepage</a>
+                <button id="logout" class="btn-no-style">Logout</button>
+                {{else}}
+                <a href="/" class="homepage">Homepage</a>
+                <a href="/login">Login</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+        {{{ body }}}
+        </main>
+    </div>
 </body>
 
 </html>
