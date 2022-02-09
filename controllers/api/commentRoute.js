@@ -29,3 +29,12 @@ router.post('/', withAuth, (req, res) => {
         res.status(500).json(err);
     })
 });
+
+//delete comment by destroy it
+router.delete('/:id', withAuth, (req, res) => {
+    Comment.destroy({
+        where: {
+            id: req.params.id 
+        }
+    })
+});
