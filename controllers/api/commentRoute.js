@@ -23,5 +23,9 @@ router.post('/', withAuth, (req, res) => {
         post_id: req.body.post_id,
         user_id: req.session.user_id
     })
-
+    .then(response => res.json(response))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 });
