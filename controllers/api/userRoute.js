@@ -61,8 +61,8 @@ router.post('/', (req,res)=>{
     //using session to save user data
     .then(response => {
         req.session.save(() => {
-            req.session.user_id = dbUserData.id;
-            req.session.username = dbUserData.username;
+            req.session.user_id = response.id;
+            req.session.username = response.username;
             req.session.loggedIn = true;
 
             res.json(response);
@@ -88,6 +88,14 @@ router.post('/login', (req, res)=>{
             res.status(400).json({message: 'Please Enter password again.'})
             return;
         }
+           //using session to save user data
+        req.session.save(() => {
+            req.session.user_id = response.id;
+            req.session.username = response.username;
+            req.session.loggedIn = true;
+
+            res.json({user: response, message: 'You had logged in!' });
+        })
     })
 })
 
