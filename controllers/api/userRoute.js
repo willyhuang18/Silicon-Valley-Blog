@@ -58,10 +58,15 @@ router.post('/', (req,res)=>{
         email: req.body.email,
         password: req.body.password
     })
-    .then(response => res.json(response))
-        .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+    //using session to save user data
+    .then(response => {
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json(response);
+        })
     });
 });
 
@@ -81,6 +86,7 @@ router.post('/login', (req, res)=>{
         const valid = response.checkUserPassword(req.body.password);
         if(!valid) {
             res.status(400).json({message: 'Please Enter password again.'})
+            return;
         }
     })
 })
