@@ -59,7 +59,7 @@ router.get('/:id', (req, res)=>{
     })
     .then(response =>{
             if(!response){
-                res.status(404).json({ message: 'Please enter valid user id'});
+                res.status(404).json({ message: 'Please enter valid id'});
                 return;
             }
          res.json(response)
@@ -94,5 +94,16 @@ router.put('/:id', withAuth, (req, res) => {
         where: {
           id: req.params.id
         }
+    })
+    .then(response =>{
+            if(!response){
+                res.status(404).json({ message: 'Please enter valid  id'});
+                return;
+            }
+         res.json(response)
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     })
 });
