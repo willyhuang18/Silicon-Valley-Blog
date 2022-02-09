@@ -77,6 +77,11 @@ router.post('/login', (req, res)=>{
             res.status(404).json({ message: 'Please enter valid user Email'});
             return;
         }
+        //verify user 
+        const valid = response.checkUserPassword(req.body.password);
+        if(!valid) {
+            res.status(400).json({message: 'Please Enter password again.'})
+        }
     })
 })
 
