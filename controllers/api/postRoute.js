@@ -69,3 +69,12 @@ router.get('/:id', (req, res)=>{
         res.status(500).json(err);
     })
 })
+
+//post route for create new post
+router.post('/', withAuth, (req, res) => {
+    Post.create({ 
+        title: req.body.title,
+        text: req.body.post_text,
+        user_id: req.session.user_id
+    })
+});
