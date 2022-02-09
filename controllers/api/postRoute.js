@@ -35,3 +35,27 @@ router.get('/', (req,res) =>{
         res.status(500).json(err);
     })
 })
+
+
+//Get post by id
+router.get('/:id', (req, res)=>{
+    Post.findOne({
+        where:{ id: req.params.id},
+        attributes: ['id', 'text', 'title', 'created_at'],
+        include: [
+            {
+                model:Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include :{
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            },
+        ]
+    })
+   
+})
