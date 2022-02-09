@@ -99,6 +99,11 @@ router.post('/login', (req, res)=>{
     })
 })
 
+//need the log out route too
+router.post('/logout', (req, res) =>{
+    
+})
+
 // put route for update user
 router.put('/:id', (req,res)=>{
     User.update(req.body, {
