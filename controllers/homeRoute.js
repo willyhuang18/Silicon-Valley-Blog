@@ -25,4 +25,10 @@ router.get('/', (req, res)=>{
             },
         ]
     })
+    .then(response => {
+        //mapping the post object
+        const userPost = response.map(post => post.get({plain: true}));
+        //pass that into homepage
+        res.render('homepage', {userPost, loggedIn: req.session.loggedIn})
+    })
 })
