@@ -102,7 +102,7 @@ router.post('/login', (req, res)=>{
 })
 
 //need the log out route too
-router.post('/logout', (req, res) =>{
+router.post('/logout', withAuth, (req, res) =>{
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             //ending the request
@@ -114,7 +114,7 @@ router.post('/logout', (req, res) =>{
 })
 
 // put route for update user
-router.put('/:id', (req,res)=>{
+router.put('/:id', withAuth, (req,res)=>{
     User.update(req.body, {
         where: {
             id: req.params.id
@@ -134,7 +134,7 @@ router.put('/:id', (req,res)=>{
 })
 
 //delete route for user
-router.delete('/:id', (req, res) =>{
+router.delete('/:id',withAuth, (req, res) =>{
     User.destroy({
         where: {
             id: req.params.id
