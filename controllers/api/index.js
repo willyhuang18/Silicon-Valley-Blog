@@ -4,3 +4,10 @@ const router = require('express').Router();
 const user = require('./userRoute');
 const post = require('./postRoute');
 const comment = require('./commentRoute');
+
+//getting the route
+router.use('/users', user);
+router.use('/posts', post);
+router.use('/comments', comment);
+
+module.exports = router;
