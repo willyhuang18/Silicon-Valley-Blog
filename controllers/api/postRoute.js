@@ -1,4 +1,6 @@
 //import router express
 const router = require('express').Router();
-//getting Post model
-const { Post } = require('../../models');
+//getting User Post Comment model
+const { User, Post, Comment } = require('../../models');
+//importing withAuth utils
+const withAuth = require('../../utils/auth');
