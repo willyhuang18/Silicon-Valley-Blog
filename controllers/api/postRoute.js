@@ -115,4 +115,17 @@ router.delete('/:id', withAuth, (req, res) => {
             id: req.params.id 
         }
     })
+    .then(response =>{
+            if(!response){
+                res.status(404).json({ message: 'Please enter valid  id for this post'});
+                return;
+            }
+         res.json(response)
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 });
+
+module.exports = router;
