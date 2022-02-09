@@ -30,5 +30,14 @@ router.get('/', withAuth, (req, res)=>{
             },
         ]
     })
-
+    .then(response => {
+        //serialize data
+        const userPost = response.map(post => post.get({plain: true}));
+        //pass that into homepage
+        res.render('dashboard', {userPost, loggedIn: true})
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 })
