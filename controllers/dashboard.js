@@ -62,4 +62,13 @@ router.get('/edit/:id', withAuth, (req, res) => {
             },
         ]
     })
+    .then(response => {
+        const userPost = response.get({plain: true});
+        //pass that into homepage
+        res.render('edit-posts', {userPost, loggedIn: true})
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 })
