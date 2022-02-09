@@ -66,4 +66,14 @@ router.get('/post/:id', (req, res) => {
             },
         ]
     })
+    .then(response =>{
+        if(!response){
+            res.status(404).json({ message: 'Please enter valid  id for this post'});
+            return;
+        }
+        //serialize the data
+        const singlePost = response.get({plain: true})
+        //pass that into homepage
+        res.render('the-post', {singlePost, loggedIn: req.session.loggedIn});
+    })
 })
