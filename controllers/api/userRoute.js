@@ -65,6 +65,21 @@ router.post('/', (req,res)=>{
     });
 });
 
+//getting post route for login
+router.post('/login', (req, res)=>{
+    User.findOne({
+        where:{
+            email:req.body.email
+        }
+    })
+    .then(response =>{
+        if(!response){
+            res.status(404).json({ message: 'Please enter valid user Email'});
+            return;
+        }
+    })
+})
+
 // put route for update user
 router.put('/:id', (req,res)=>{
     User.update(req.body, {
