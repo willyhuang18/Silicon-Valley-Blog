@@ -101,7 +101,14 @@ router.post('/login', (req, res)=>{
 
 //need the log out route too
 router.post('/logout', (req, res) =>{
-    
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            //ending the request
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
 })
 
 // put route for update user
