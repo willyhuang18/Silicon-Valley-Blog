@@ -28,12 +28,12 @@
                     
                     <form class="d-flex">
                         {{#if loggedIn}}
-                        <button href="/" type="button" class=" btn nav-link active btn-success " aria-current="page"> Homepage</button>
+                        <a href="/" type="button" class=" btn nav-link active btn-success " aria-current="page"> Homepage</a>
                         <a href="/dashboard">Dashboard</a>
-                        <button href="/login" id="logout" class="btn btn-outline-success" type="submit">Log out</button>
+                        <a href="/login" id="logout" class="btn btn-outline-success" type="submit">Log out</a>
                         {{else}}
-                        <button href="/" type="button" class=" btn nav-link active btn-success " aria-current="page"> Homepage</button>
-                        <button href="/login" class="btn btn-outline-success" type="submit">Log In</button>
+                        <a href="/" type="button" class=" btn nav-link active btn-success " aria-current="page"> Homepage</a>
+                        <a href="/login" class="btn btn-outline-success" type="submit">Log In</a>
                         {{/if}}
                     </form>
                 </div>
