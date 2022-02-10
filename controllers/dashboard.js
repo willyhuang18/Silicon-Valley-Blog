@@ -74,8 +74,34 @@ router.get('/edit/:id', withAuth, (req, res) => {
 })
 
 // rendering newPost page 
-router.get('/new-post', (req, res) => {
-    res.render('new-posts');
+router.get('/new-post', withAuth, (req, res) => {
+    Post.findAll({
+        where: { user_id: req.session.user_id},
+        attributes: ['id', 'text', 'title', 'created_at'],
+        include: [
+            {
+                model:Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include :{
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            },
+        ]
+    })
+    .then(response => {
+        const userPost = response.map(post => post.get({plain: true}));
+        //pass that into homepage
+        res.render('new-posts', {userPost, loggedIn: true})
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   });
 
   module.exports= router;
