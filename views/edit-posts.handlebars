@@ -1,20 +1,16 @@
 <article>
     <a href="/dashboard"> &larr; Back To Dashboard</a>
     <h2>
-        Edit Post
+        Edit Blog
     </h2>
     <form class="updateForm">
         <div>
-            <label for="post-title">post title:</label>
-            <input id="updateTitle" type="text" size="60" value="{{post.title}}" />
+            <label for="post-title">Blog title:</label>
+            <input id="updateTitle" type="text" size="60" value="{{title}}" />
         </div>
         <div>
-            <label for="post-content">post content:</label>
-            <textarea id="updateText" type="text">{{post.text}}</textarea>
-        </div>
-        <div class="is-pulled-right">
-        created by you on {{format_date post.created_at}}
-         <a href="/post/{{post.id}}">{{post.comments.length}} {{format_comment "comment" post.comments.length}}</a>
+            <label for="post-content">Blog content:</label>
+            <textarea id="updateText" type="text">{{text}}</textarea>
         </div>
         <div>
             <button type="submit">Save Post</button>
