@@ -1,7 +1,8 @@
 <div class="mb-5 pt-3">
-        <a href="/dashboard/new-post/"><button id="create-post" class="btn btn-is-primary ">create post</button></a>
+    <div>
+        <a href="/dashboard/new-post/" class="btn btn-is-primary ">Create Blog</a>
         
-        <h2 class="title pb-4">dashboard: your posts</h2><hr>
+        <h2 class="title pb-4">Your Blog: </h2><hr>
 {{#if posts.length}}
     </div>
 
@@ -13,7 +14,7 @@
     {{/each}}
 
 {{else}}
-<h6 class="text-center fw-bold fs-1">you do not currently have any posts</h6>
+<h6 class="text-center fw-bold fs-1">Please Create Something Interesting </h6>
 
 {{/if}}
 
