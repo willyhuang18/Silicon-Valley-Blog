@@ -55,3 +55,32 @@ async function updateFormHandler(event) {
 }
 
 document.querySelector('.updateForm').addEventListener('submit', updateFormHandler);
+
+//delete post function
+async function deletePostHandler(event) {
+    event.preventDefault();
+
+    const id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+      ];
+
+    const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+        body: JSON.stringify({
+          post_id: id
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        document.location.replace('/dashboard/');
+      } else {
+        alert(response.statusText);
+      }
+  
+}
+  
+document.querySelector('.deletePost').addEventListener('click', deletePostHandler);
+
