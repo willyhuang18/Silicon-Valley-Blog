@@ -1,8 +1,23 @@
-<ol>
-<!-- posts array -->
-{{#each posts as |post|}}
-  <ul>
-      {{post }}
-  </ul>
-{{/each}}
-</ol>
+{{#if posts.length}}
+<section>
+  <h2>Your Posts</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <ul>
+      <article>
+    <div >
+       <a href="/post/{{id}}">{{title}}</a>
+    </div>
+    <div class="body">
+      {{text}}
+    </div>
+    <div >
+        <strong>Posted by {{user.username}} on {{format_date created_at}}</strong>
+    </div>
+    </article>
+      <a href="/dashboard/edit/{{post.id}}" >Edit post</a>
+    </ul>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
