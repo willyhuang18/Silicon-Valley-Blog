@@ -41,6 +41,7 @@ This application contains the information about I had learn, and the work I have
 ![image](https://user-images.githubusercontent.com/87446864/153396566-b98403ab-6aa2-4585-84ef-55b452cb3a94.png)
 
 # Delopyed link 
+https://enigmatic-cove-14709.herokuapp.com/
 
 # Authors
 PangTa Huang
