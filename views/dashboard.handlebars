@@ -3,10 +3,10 @@
         <a href="/dashboard/new-post/" class="btn btn-is-primary ">Create Blog</a>
         
         <h2 class="title pb-4">Your Blog: </h2><hr>
-{{#if posts.length}}
+{{#if userPost.length}}
     </div>
 
-    {{#each posts as |post|}}
+    {{#each userPost as |post|}}
         {{> post-info post}}
         
             <a href="/dashboard/edit/{{post.id}}"><button class="btn btn-is-primary">edit post</button></a>
