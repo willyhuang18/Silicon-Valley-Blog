@@ -1,21 +1,21 @@
 {{#if posts.length}}
-<section>
+<section class="row mb-4">
   <h2>Your Posts</h2>
-  <ol>
+  <ol class="col-md-5">
     {{#each posts as |post|}}
     <ul>
       <article>
     <div >
        <a href="/post/{{id}}">{{title}}</a>
     </div>
-    <div class="body">
+    <div class="col-md-7">
       {{text}}
     </div>
     <div >
         <strong>Posted by {{user.username}} on {{format_date created_at}}</strong>
     </div>
     </article>
-      <a href="/dashboard/edit/{{post.id}}" >Edit post</a>
+      <a href="/dashboard/edit/{{post.id}}">Edit post</a>
     </ul>
     {{/each}}
   </ol>
