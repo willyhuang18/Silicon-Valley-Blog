@@ -1,0 +1,12 @@
+<div class="card mb-6 book" >
+  {{#each this}}
+  <section>
+    <div>
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="card-body box">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>

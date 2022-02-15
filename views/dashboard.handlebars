@@ -1,24 +1,42 @@
-<div class="mb-5 pt-3">
+<div>
     <div>
         <div>
+            <section class="home">
+                <div class="row">
+                    <div class="content">
+                        <h3>fresh coffee in the morning</h3>
+                    </div>
+                    <div class="image">
+                        <img src="/img/cup.png" class="main-home-image" alt="">
+                    </div>
+                </div>
+                <div class="image-slider">
+                    <a href="/dashboard/new-coffee/" type="button" class=" btn p-1 text-light" style="background: #375d6f;"><span>Your Perfect Cup</span>
+                        <div class="liquid"></div>
+                     </a>
+                </div>
+            </section>
+                <h1 class="heading"> Coffee <span>Your Perfect Cup:</span></h1>
+        </div>
     
-        <h2 class="title pb-4">Your Blog: </h2>
-        <a href="/dashboard/new-post/" type="button"class="btn btn-primary" > Create Blog </a>
-        <hr>
-        </div>
-{{#if userPost.length}}
+{{#if coffee.length}}
     </div>
-
     {{#each userPost as |post|}}
-        {{> post-info post}}
-        </div>
-            <a href="/dashboard/edit/{{post.id}}"><button type="button" class="btn btn-primary">edit post</button></a>
-</div>
+    <div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
+        <div class="card d-flex position-relative flex-column">
+            <div class='imgContainer'>  </div>
+            {{> post-info post}}
+            </div>
+            <a href="/dashboard/edit/{{post.id}}" type="button" class=" btn p-1 text-light" style="background: #6f4937;"><span>edit</span>
+                    <div class="liquid"></div>
+            </a>
+        </div>    
+    </div>
+    
     {{/each}}
 
 {{else}}
-<h6 class="text-center fw-bold fs-1">Please Create Something Interesting </h6>
+<h6 class="text-center fw-bold fs-1">Please Make Your Perfect Cup </h6>
 
 {{/if}}
-
 

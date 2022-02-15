@@ -1,0 +1,83 @@
+[
+    {
+        "ingredient_name": "Sugar",
+        "ingredient_description": "Be it grounded, powdered, or cubed, sugar is the first choice for most people when looking to sweeten their coffee."
+    },
+    {
+        "ingredient_name": "Stevia",
+        "ingredient_description": "Extracted from the Stevia plant, Stevia is a safe alternative for those looking to sweeten their coffee without raising their blood sugar."
+    },
+    {
+        "ingredient_name": "Brown Sugar",
+        "ingredient_description": "Sugar that hasn't had it's molasses content removed, giving it a slight caramel, or toffee-esque flavor."
+    },
+    {
+        "ingredient_name": "Honey",
+        "ingredient_description": "A sweet nectar, with a flavor profile as deep and broad as coffee itself."
+    },
+    {
+        "ingredient_name": "Maple Syrup",
+        "ingredient_description": "Not to be confused with common pancake syrup, natural maple syrup is a quality sweetener for coffee that stands to change the flavor with a few health benefits to boot."
+    },
+    {
+        "ingredient_name": "Vanilla Extract",
+        "ingredient_description": "A bit of vanilla extract can go a long way. Sweetening the coffee ever so slighly, it shines by subtlely adding to the flavor and aroma of your coffee."
+    },
+    {
+        "ingredient_name": "Salt",
+        "ingredient_description": "While appearing contradictory, a tiny pinch of salt can cut the bitterness of coffee while preserving it's flavor."
+    },
+    {
+        "ingredient_name": "Light Roast",
+        "ingredient_description": "As the name suggests this light roasting level that allows the coffee to best maintain its natural flavor and smell"
+    },
+    {
+        "ingredient_name": "Cinnamon Roast",
+        "ingredient_description": "Named after the color of the bean after this roast, Cinnamon is a light coffee roast that is well suited to a black coffee."
+    },
+    {
+        "ingredient_name": "Medium Roast",
+        "ingredient_description": "Medium is considered the most balanced of roasts, slightly sweeter than Lights but retaining the acidity that's lost in darker roasts"
+    },
+    {
+        "ingredient_name": "High Roast",
+        "ingredient_description": "A darker Medium roast with balanced bitterness and acidity content"
+    },
+    {
+        "ingredient_name": "Full City Roast",
+        "ingredient_description": "A dark roast, almost at the point where a bean's natural flavor is lost to the smokyness of the roast."
+    },
+    {
+        "ingredient_name": "French Roast",
+        "ingredient_description": "About as dark a roast can be before being essentially burnt, the natural flavor nearly completely absent in favor of the bittersweetness of the roast."
+    },
+    {
+        "ingredient_name": "Blue Mountain",
+        "ingredient_description": "From the Typica family, a sub family of Arabica, Blue mountain is considered a mild, mellow, and smooth coffee, with notes of nuts and chocolate."
+    },
+    {
+        "ingredient_name": "Caturra",
+        "ingredient_description": "From the Typica family, a sub family of Arabica, Caturra is considered a sweet, complex, and crisp coffee, with sugary undertones."
+    },
+    {
+        "ingredient_name": "Kona",
+        "ingredient_description": "From the Typica family, a sub family of Arabica, Konda is a highly sought after coffee known for it's flavor resembling brown sugar, milk chocolate, honey, and sharp fruit flavor that could be anything from Peach to Strawberry"
+    },
+    {
+        "ingredient_name": "Pacamara",
+        "ingredient_description": "From the Typica family, a sub family of Arabica, Pacamara is deeply fruity with complex flavors like citrus, berries, and floral notes of Jasmine"
+    },
+    {
+        "ingredient_name": "Sumatra",
+        "ingredient_description": "From the Typica family, a sub family of Arabica, Sumatra is considered smooth, balanced, with an intense flavor. It contains tropical fruit notes sometimes resembling grapefruit or lime"
+    },
+    {
+        "ingredient_name": "Robusta",
+        "ingredient_description": "Robusta, also know as Coffea canephora, is a hearty, high yield coffee compared to Arabica varieties hence the name. It has a distinct earthy flavour, high caffeine content, but often more bitter than a Arabica variety."
+    },
+    {
+        "ingredient_name": "Liberica",
+        "ingredient_description": "Liberica is a coffee far more uncommon than Arabica or Robusta due to the difficulty of its cultivation. It is known for its intense smoky and wood flavor."
+    }
+
+]

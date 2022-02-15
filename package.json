@@ -1,31 +1,35 @@
 {
-  "name": "tech-blog",
+  "name": "perfect-cup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/seed.js"
+
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/willyhuang18/Tech-Blog.git"
+    "url": "git+https://github.com/MChambersIV/Perfect-Cup.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/willyhuang18/Tech-Blog/issues"
+    "url": "https://github.com/MChambersIV/Perfect-Cup/issues"
   },
-  "homepage": "https://github.com/willyhuang18/Tech-Blog#readme",
+  "homepage": "https://github.com/MChambersIV/Perfect-Cup#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
-    "express-session": "^1.17.2",
+
+    "express-session": "^1.0.6",
+
     "mysql2": "^2.3.3",
-    "sequelize": "^6.15.1"
+    "sequelize": "^6.16.1"
   }
 }

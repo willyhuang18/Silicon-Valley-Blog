@@ -1,0 +1,8 @@
+<div class="content">
+   <h2>{{coffee_name}}</h2>
+   <h1>{{user.coffee}}</h1>
+   {{format_date created_at}} 
+  {{#each coffee as |ingredient|}}
+    <h1 value='{{ingredient.ingredient_name}}'>{{ingredient.ingredient_name}}</h1>
+   {{/each}}
+</div>

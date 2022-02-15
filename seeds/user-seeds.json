@@ -1,0 +1,17 @@
+[
+    {
+        "user_name": "Dave",
+        "user_email": "dave@dmail.com",
+        "user_password": "IAMD4V3!"
+    },
+    {
+        "user_name": "Sasha",
+        "user_email": "sasha@yahoo.com",
+        "user_password": "supergoodPASSWORD"
+    },
+    {
+        "user_name": "Turk",
+        "user_email": "turkleton@scrubs.com",
+        "user_password": "JD43v3rsecret"
+    }
+]

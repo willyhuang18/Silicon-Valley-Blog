@@ -1,0 +1,82 @@
+<article>
+     <a href="/dashboard" type="button" class=" btn m-3 text-light " style="background: #6f4937;"> &larr; <span>Back To Dashboard</span>
+                <div class="liquid"></div>
+            </a>
+       <h1 class="heading"> Coffee <span>Edit Cup:</span></h1>
+    
+    <section class="book">
+   
+    <div class="container container-fluid align-center">
+      <div class="row mt-4">
+          <div class="d-flex justify-content-center">
+            <div class="cup "></div>
+          </div>
+          <div class="d-flex  justify-content-center">
+          <div class="newCup "> 
+            <form class="form newPostForm">
+            <div class="sel sel--black-panther ">
+              <select name="select-profession" type="checkbox" class="slides" id="select-profession">
+                <option value="" disabled>Bean</option>
+                {{#each coffee. as |ingredient|}}
+                <option value='{{ingredient.ingredient_name}}'>{{ingredient.ingredient_name}}</option>
+                {{/each}}
+                {{!-- <option value="hacker">Blue Mountain</option>
+                <option value="gamer">Caturra</option>
+                <option value="developer">Kona</option>
+                <option value="programmer">Pacamara</option>
+                <option value="designer">Sumatra</option>  --}}
+              </select>
+              </div>
+                <div class="sel sel--black-panther ">
+              <select name="select-profession" type="checkbox" class="slides  blogContent" id="select-profession">
+                <option value="" disabled>Roast</option>
+                {{!-- <option  value="gamer">Light Roast</option>
+                <option value="gamer">Cinnamon Roast</option>
+                <option value="developer">Medium Roast</option>
+                <option value="programmer">High Roast</option>
+                <option value="designer">Full City Roast</option> 
+                <option value="designer">French Roast</option>  --}}
+
+              </select>
+              </div>
+              
+                <div class="sel sel--black-panther ">
+                <select name="select-profession" type="checkbox" class="slides" id="select-profession">
+                {{!-- <option value="" disabled>Sweetness</option>
+                <option value="hacker">Sugar</option>
+                <option value="gamer">Stevia</option>
+                <option value="developer">Brown Sugar</option>
+                <option value="programmer">Honey</option>
+                <option value="designer">Maple Syrup</option> --}}
+              </select>
+              </div>
+            </div>
+          </div>
+        <div class="d-flex mb-3 px-3 justify-content-center">
+            <a  type="submit" class=" btn  active  m-1 text-light" style="background: #375d6f;"><span> Save </span>
+              <div class="liquid"></div>
+            </a>
+            <a  class=" btn  active  m-1 text-light deletePost" style="background: #375d6f;"><span> delete </span>
+              <div class="liquid"></div>
+            </a>
+          </div>
+      </div> 
+      </form>
+
+    </section>
+
+    <section class="book">
+    <form class="commentForm">
+        <label for="post-content">Comment</label>
+        <textarea id="commentText" class="form-control box "type="text" placeholder="your comment" id="commentText"></textarea>
+    
+        <input type="submit" value="Add Comment" class="signUpBtn">
+    </form>
+
+    </section>
+</article>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/updatepost.js"></script>
+<script src="/js/deletepost.js"></script>
