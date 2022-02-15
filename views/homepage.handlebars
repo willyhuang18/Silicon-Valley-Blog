@@ -1,15 +1,8 @@
 {{#each userPost as |post|}}
-<div class="container flex section ">
-    <div class="row d-flex  justify-content-center centers">
-        <div class=" d-flex justify-content-center " >
-            <div class="property-card ">
-            {{> home-info post }}
-                <li><div class="property-image"></div></li>
-                </div>
-        </div>
-    </div>
-    </div>
-</section>
+
+{{> post-info post }}
+</div>
+
 {{else}}
-<h6 class="text-center fw-bold fs-1">Please Make Your Cup</h6>
+<h6 class="text-center fw-bold fs-1">Please Update Your Blog</h6>
 {{/each}}

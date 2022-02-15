@@ -1,18 +1,34 @@
-const User = require('./User');
-const Coffee = require('./Coffee');
-const Ingredient = require('./Ingredient');
-const CoffeeIngredient = require('./CoffeeIngredient');
+const User = require('./user');
+const Post = require('./post');
+const Comment = require('./comment');
 
+//post belong to user
+Post.belongsTo(User, {
+    foreignKey: 'user_id'
+})
 
+//post has many comment
+Post.hasMany(Comment, {
+    foreignKey: 'post_id'
+})
 
-Coffee.belongsTo(User, { foreignKey: 'user_id' });
+//user has many post
+User.hasMany(Post, {
+    foreignKey: 'user_id'
+})
 
-Coffee.belongsToMany(Ingredient, {through: CoffeeIngredient, foreignKey: 'coffee_id'}); 
+//user has many comment 
+User.hasMany(Comment, {
+    foreignKey:'user_id'
+})
 
-Ingredient.belongsToMany(Coffee, {through: CoffeeIngredient, foreignKey: 'ingredient_id'});
+//comment belong to user
+Comment.belongsTo(User,{
+    foreignKey: 'user_id'
+})
 
+Comment.belongsTo(Post, {
+    foreignKey:'post_id'
+})
 
-
-
-module.exports = { User, Coffee, Ingredient, CoffeeIngredient};
-
+module.exports = {User, Post, Comment};

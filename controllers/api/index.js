@@ -1,11 +1,13 @@
-const router = require("express").Router();
-const coffeeRoutes = require("./coffee-routes");
-const userRoutes = require("./user-routes");
-const ingredientRoutes = require("./ingredient-routes");
+//import router express
+const router = require('express').Router();
+//import the other apis
+const user = require('./userRoute');
+const post = require('./postRoute');
+const comment = require('./commentRoute');
 
-//Prefix all routes
-router.use("/coffee", coffeeRoutes);
-router.use("/users", userRoutes);
-router.use("/ingredients", ingredientRoutes);
+//getting the route
+router.use('/users', user);
+router.use('/posts', post);
+router.use('/comments', comment);
 
 module.exports = router;

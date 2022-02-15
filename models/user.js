@@ -1,57 +1,64 @@
-const {Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
+//import the model from sequelize
+const { Model, DataTypes } = require('sequelize');
+//import connection file
 const sequelize = require('../config/connection');
+//import bcrypt
+const bcrypt = require('bcrypt');
 
-class User extends Model {
-    checkPassword(loginPw) {
-        return bcrypt.compare(loginPw, this.user_password);
+class User extends Model{
+    //to use bcrypt compare method to check password
+    checkUserPassword(userPassword){
+        return bcrypt.compare(userPassword, this.password);
     }
 }
 
-User.init( 
+//define columns
+User.init(
     {
-        user_id: {
+        id:{
             type: DataTypes.INTEGER,
-            allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            allowNull: false,
+            autoIncrement: true
         },
-        user_name: {
+        username:{
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        email: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        user_email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unqiue: true,
-            validate: {
-                isEmail: true,
+            unique: true,
+            validate :{
+                isEmail:true
             }
         },
-        user_password: {
+        password: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [8],
-            },
-        },
+            validate:{
+                len:[6]
+            }
+        }
     },
     {
-        hooks: {
-            beforeCreate: async (signUpUserData) => {
-                signUpUserData.user_password = await bcrypt.hash(signUpUserData.user_password, 10);
-                return signUpUserData;
+        hook:{
+            //async beforeCreate, with async .. await method
+            async beforeCreate(userData){
+                userData.password = await  bcrypt.hash(userData.password, 10);
+                return userData;
             },
-            beforeUpdate: async (updatedUserData) => {
-                updatedUserData.user_password = await bcrypt.hash(updatedUserData.user_password, 10);
-                return updatedUserData;
-            },
+            //async beforeUpdate, with async .. await method
+            async beforeUpdate(updateUserData){
+                updateUserData.password = await bcrypt.hash(updateUserData.password, 10)
+                return updateUserData;
+            }
         },
         sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        modelName: 'user',
+        freezeTableName:true,
+        underscored: true,
+        // modelName:'user'
     }
 );
-
+ 
 module.exports = User;
