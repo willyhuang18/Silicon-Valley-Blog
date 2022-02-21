@@ -2,7 +2,7 @@
 
 Work independent to create the tech blog from scratch :
 
-- As a Developer, I want to use the knowledge I learned to create the Note taker  by using JavaScript, Node.js,
+- As a Developer, I want to use the knowledge I learned to create the Blog  by using JavaScript, Node.js,
 
 # Site Picture
 ![image](https://user-images.githubusercontent.com/87446864/153393930-cfcadbc5-aa98-4afa-9330-7a092f7b49ae.png)
